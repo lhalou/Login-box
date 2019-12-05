@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>漂亮的登录框</title>
+    <style>
+        @font-face {font-family: "iconfont";
+            src: url('iconfont.eot?t=1571464492893'); /* IE9 */
+            src: url('iconfont.eot?t=1571464492893#iefix') format('embedded-opentype'), /* IE6-IE8 */
+            url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAARAAAsAAAAACHQAAAPyAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDFAqEPINvATYCJAMQCwoABCAFhG0HQRtSB8iemjxtAGBr12n+rwIPCjcXjwdIL743yWx2/SG4M86q7UrurnIrTayrVTo6mYlqDyVzutwgJYCJzGD+q7ncfJEdbcc/u1cFpMBewvdz2RTIuH4tsNGtkDXyVW2nJjtqaEnoaT6YUEJxRLuN+0X6n2PGK5tAfqC5ZAftDXCUQAPqxjXI8eEdyYn5DdNLHIhLlwkoaU0OnDi1sAGNIm9WQNjp2jo01uTiSGpQEGQ9G6NwXU4huZC8j2vp74ef9Q8FErmUt3Du5kkLRr6j7/qnx/8XK2Ol0/tpwbaRoidAJKzt1S9Xk/t7gpXMglq9ATJRkHzn+/r//8+etFTOPf/hFZAIUkLG41cgZmAg5bsQgoTveNqC/lDgAVFxQwElPAn8wsM29IIoldavVIs9GhPJmMqWH12IsQRridni9vnFL3svyr6A+xJgkery2rj7dMilItQzr3AagIuV4ubaxqKGjHKjxwQz5x4cBqjPbrQ6DhzvbVlGlT5f3D9tnZ54XdRMB0/43Barjn4i+o5wonUxq8s4hHpuYA1lu+2dwL1g2dDfbtw0NNACcNfn3Dh4xNqqXBwpoob33dXS6Sn3J8ZqYj7fC3EW+Vti9+h1Fmwrbu7mi451LOlPh6QwJabkA7SjV985Vmem7WBR9bbBsc1Hf20Oq69uDzRMwRZtNYjWYX+dSqFy7KHYsFj3w7QwKLtQvVC5K/xmHvp/o28Hfr3BXWytZvN6H6CLl7Ajrny3nQdCbKV9fYM2loMn38zGjO3KNRKCvX+1EHqUmm99mdKh5+nb2ieNH3Q0bOkZX0w6dCBM1DS2/tUuZ/1u0UZ1w83g7tKamioml1nV0cFvYbXwTaZaxuuYb2Lbtsg3vrRt24hdZmAfeXkF+efXQs6rlArZeBCsBfif4eN+EaRjU//990l2/fVxgzUdI38tlJ+95ZuP3+uZ2v9nxPxAQQJj/GXGzLpoWZ4iRs0O6Y4hml+JkqDkK/i76VDfwx7CRrOTCQoalZDIawWpgo6IiOkJOWUDIVMwBkp68G4vayBfjRCL6K4cQFDXNCRqXodUXSeIiLmHnMbeIFM3pFCyODQ4sKxz2NY8QZHOZKFxga4pIxGouDlLXSM7CXRVZaW4LVKx68K8Ut0MTVNEao8l8aldYBYolAxxClxHQSCxrKRHJmcc5nIpq0ru+1DGlCE0m0AhOkYsKN4FlMYkRUTcnDW3fn4NsSUCOjVS05BvIUrM7R9pKKlnIKb50ayad7mlwClbQSEmoGSKFEIeoCWB75dQbv84DzGxjNQV3rISFWqUPJefOV8YvuEeKPEOjCEJaYghJ7eforOk/kAiWSY5GxPX0SUAAAA=') format('woff2'),
+            url('iconfont.woff?t=1571464492893') format('woff'),
+            url('iconfont.ttf?t=1571464492893') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+            url('iconfont.svg?t=1571464492893#iconfont') format('svg'); /* iOS 4.1- */
+        }
+
+        .iconfont {
+            font-family: "iconfont" !important;
+            font-size: 16px;
+            font-style: normal;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        ul,li {
+            list-style: none;
+        }
+        body {
+            background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAk8UUnOTJnkHmWU9KOWsd2hgnx42KHW3KYK7Iiywd0CnPMMK1") no-repeat;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .wrap {
+            max-width: 900px;
+            font-size: 14px;
+            text-align: center;
+            font-family: '黑体';
+        }
+        a {
+            text-decoration: none;
+            color: rgb(98,94,91);
+        }
+        .header {
+            font-size: 25px;
+            color: rgb(98,94,91);
+        }
+        .header span {
+            font-size: 30px;
+        }
+        .form {
+            margin: 35px auto;
+            padding: 30px;
+            width: 260px;
+            height: 260px;
+            background: antiquewhite;
+            box-shadow: 0 8px 10px 0 rgba(0,0,0,0.6);
+        }
+        .form ul {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            justify-content: space-between;
+        }
+        .form ul>li {
+            width: 100%;
+            text-align: left;
+        }
+        .form a {
+            font-size: 14px;
+            color: rgb(152,142,135);
+        }
+        .form input {
+            appearance: none;
+            -webkit-appearance: none;
+            border: none;
+            border-radius: 5px;
+            background: #e1dcd8;
+            width: calc(100% - 30px);
+            height: 40px;
+            padding-left: 30px;
+            box-shadow: inset 0 2px 5px #aaa;
+            outline: none;
+        }
+        .form input[type=text]:focus, .form input[type=password]:focus {
+            background: #fff;
+            box-shadow: inset 0 -2px 5px rgba(0,0,0,0.8);
+        }
+        .form .icon {
+            position: relative;
+        }
+        .form span {
+            position: absolute;
+            top: 12px;
+            left: 8px;
+        }
+        .form .remember {
+            font-size: 14px;
+            font-weight: bold;
+            font-family: "Arial Black";
+            position: relative;
+            margin-left: 30px;
+        }
+        .remember input[type=checkbox] {
+            position: absolute;
+            clip: rect(0, 0, 0, 0);
+        }
+        .form .mark {
+            display: inline-block;
+            border: 1px solid #ccc;
+            background: #fff;
+            border-radius: 5px;
+            width: 22px;
+            height: 22px;
+            position: absolute;
+            top: 0;
+            left: -30px;
+            cursor: pointer;
+        }
+        .mark::before {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 5px;
+            top: 6px;
+            left: 5px;
+            border: 3px solid #74884a;
+            opacity: 0.4;
+            border-top: none;
+            border-right: none;
+            transform: rotate(-45deg);
+        }
+        input[type="checkbox"]:checked+.mark::before {
+            opacity: 1;
+            border-color: #74884a;
+        }
+        .form button {
+            outline: none;
+            display: inline-block;
+            background: #94aa64;
+            color: #fff;
+            font-size: 18px;
+            border: 1px solid #7d8862;
+            width: 100%;
+            height: 40px;
+            border-radius: 5px;
+            box-shadow: 0 -1px 0 rgba(0,0,0,0.3),0 0 0 rgba(255,255,255,0);
+            background: linear-gradient(to bottom,#94aa64,#7a924a,#607738);
+        }
+        .form button:hover {
+            opacity: 0.8;
+        }
+        .form button:focus {
+            background: linear-gradient(to top,#94aa64,#7a924a,#607738);
+        }
+        .footer {
+            font-size: 12px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+<div class = "wrap">
+    <div class = "header">
+        Login to
+        <span>love.ly</span>
+    </div>
+<form class = "form" method = "post">
+    <ul>
+        <li class = "icon">
+            <span class = "iconfont">&#xe602;</span>
+            <input type = "text" name = "username" placeholder = "iconDeposit">
+        </li>
+        <li class = "icon">
+            <span class = "iconfont">&#xe601;</span>
+            <input type = "password" name = "password" placeholder = "........">
+        </li>
+        <li class = "remember">
+            <input type = "checkbox" id = "checkbox">
+            <label for = "checkbox" class = "mark"></label>
+            Remember Me
+        </li>
+        <li>
+            <a href = "#">Forgot username or password?</a>
+        </li>
+        <li>
+            <button>Login</button>
+        </li>
+    </ul>
+</form>
+    <div class = "footer">
+        <p>
+            Love.ly Personal Blog .PSD Template
+            <a href = "#">Copyright ©2012 Matt Gentile</a>
+        </p>
+        <p>
+            <a href = "#">Love.ly Home</a>
+            |
+            <a href = "#">Bolg</a>
+            |
+            <a href = "#">Work</a>
+            |
+            <a href = "#">Terms of Use</a>
+            |
+            <a href = "#">Contact Me</a>
+        </p>
+    </div>
+</div>
+</body>
+</html>
